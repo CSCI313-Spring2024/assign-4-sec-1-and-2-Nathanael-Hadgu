@@ -1,0 +1,23 @@
+<div class="mb-4">
+    <h2>Edit Contact</h2>
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="onSave()">
+    <!-- same fields as AddComponent -->
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input class="form-control" formControlName="fName" />
+      <div class="text-danger small" *ngIf="form.get('fName')?.hasError('required')">
+        First name is required
+      </div>
+    </div>
+    <!-- ... last name, phone, email fields identical ... -->
+  
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary" type="submit">Save</button>
+      <button class="btn btn-secondary" type="button" (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+  
