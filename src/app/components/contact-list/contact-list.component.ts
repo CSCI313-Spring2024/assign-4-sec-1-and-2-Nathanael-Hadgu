@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { DataService } from '../../data-service';
 import { Contact } from '../../contacts';
 import { ContactCardComponent } from "../contact-card/contact-card.component";
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-list',
-  imports: [ContactCardComponent, RouterModule],
+  imports: [ContactCardComponent, RouterModule, RouterLink, CommonModule, FormsModule],
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css'
 })
@@ -25,6 +27,7 @@ export class ContactListComponent {
 
   onEdit(contact: Contact) {
 	this.router.navigate(['/contacts', contact.id, 'edit']);
+  console.log("test");
   }
 
   onDelete(contact: Contact) {

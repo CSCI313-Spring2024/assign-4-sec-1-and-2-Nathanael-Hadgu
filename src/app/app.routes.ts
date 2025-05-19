@@ -7,9 +7,9 @@ import { ContactEditComponent } from './components/contact-edit/contact-edit.com
 
 
 export const routes: Routes = [
-    {path: '', redirectTo: '/contacts', pathMatch: 'full'},
-    {path: '/contacts', component: ContactListComponent},
-    {path: '/contacts/add', component: ContactAddComponent},
-    {path: '/contacts/:id/edit', component: ContactEditComponent},
-    {path: '/contacts/**', component: NotFoundComponent}
+    {path: '', redirectTo: 'contacts', pathMatch: 'full'},
+    {path: 'contacts', component: ContactListComponent},
+    {path: 'contacts/add', component: ContactAddComponent},
+    {path: 'contacts/:id/edit', component: ContactEditComponent},
+    {path: 'contacts/**', component: NotFoundComponent}
 ];
